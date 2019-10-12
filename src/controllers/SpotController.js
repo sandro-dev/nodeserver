@@ -26,7 +26,6 @@ module.exports = {
     const { _id } = req.params;
     const spot = await Spot.find(_id);
     return res.json(spot);
-
   }
 
 }
