@@ -19,12 +19,15 @@ module.exports = {
   
   async index(req, res) {
     const spots = await Spot.find();
+    
     return res.json(spots);
   },
 
-  async destroy(req, res) {
+  async destroy(req, res) {    
     const { _id } = req.params;
-    const spot = await Spot.find(_id);
+    
+    spot = await Spot.findByIdAndDelete(_id);
+    
     return res.json(spot);
   }
 

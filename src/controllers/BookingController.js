@@ -26,7 +26,7 @@ module.exports = {
   async destroy(req, res) {
     const { _id } = req.params;
     
-    const bookings = await Booking.find({_id: _id});
+    const bookings = await Booking.findByIdAndDelete(_id);
     
     return res.json(bookings);
   }
